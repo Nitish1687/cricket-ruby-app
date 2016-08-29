@@ -1,0 +1,29 @@
+<%= form_for(player) do |play| %>
+
+<% if player.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(player.errors.count, "error") %> prohibited this project from being saved: </h2>
+        <ol>
+            <% player.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ol>
+    </div>
+    <% end %>
+    <p>
+        <%= play.label :name %><br>
+        <%= play.text_field :name %>
+    </p>
+
+    <p>
+        <%= play.label :age %>
+        <%= play.text_field :age %>
+    </p>
+    <p>
+      <%= play.label :description%>
+      <%= play.text_area :description%>
+    </p>
+
+    <%= play.submit %>
+
+<% end %>

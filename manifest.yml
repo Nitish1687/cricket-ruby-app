@@ -1,0 +1,9 @@
+---
+applications:
+- name: cricket-ruby-app
+  memory: 256M
+  instances: 1
+  random-route: true
+  command: bundle exec rake db:schema:load && bundle exec rails s
+  services:
+  - mysql

@@ -1,0 +1,9 @@
+<% require File.expand_path(File.dirname(__FILE__) + '/../../helpers/players_helper') %>
+
+<div id="player">
+  Name : <span id="name"><%= @player.name %></span><br>
+  Age : <span id="age"><%= @player.age %></span><br>
+  description : <span id="description"> <%= raw handleMarkup(@player.description) %></span><br>
+  <%= link_to 'Edit Player', edit_player_path(@player) %>
+  <%= link_to 'Delete Player', player_path(@player), method: :delete, data: {confirm: 'Are you sure!!'} %>
+</div>

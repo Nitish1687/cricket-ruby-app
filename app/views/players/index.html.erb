@@ -1,0 +1,14 @@
+<h1>Players Details</h1>
+
+<div id="players">
+  <ol>
+    <% @players.each do |p| %>
+        <li>
+          <%= link_to p.name, p %><br>
+        </li>
+    <% end %>
+  </ol>
+
+</div>
+
+<%= link_to 'New Player', :action => 'new' %>
