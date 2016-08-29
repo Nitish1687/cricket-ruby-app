@@ -1,0 +1,12 @@
+<%=form_for([player, brand]) do |brand| %>
+    <p>
+      <%= brand.label :name %>
+      <%=brand.text_field :name%>
+    </p>
+    <p>
+      <%= brand.label :description %>
+      <%= brand.text_area :description %>
+    </p>
+
+    <%= brand.button :submit  %>
+<%end%>

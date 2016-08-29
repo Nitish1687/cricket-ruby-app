@@ -55,7 +55,7 @@ RSpec.feature 'Player' do
     fill_in 'Age', with: testPlayer.age
     fill_in 'Description', with: testPlayer.description
     click_button 'Update Player'
-    expect(page).to have_content 'Players  Detail'
+    expect(page.find("div#player//span#name").text).to eq(testPlayer.name)
   end
 
   scenario 'delete player' do
