@@ -1,0 +1,14 @@
+<% require File.expand_path(File.dirname(__FILE__) + '/../../helpers/players_helper') %>
+<h>Brand List</h>
+<div id="brands">
+  <% if !@brands.empty? %>
+      <ul>
+        <% @brands.each do |brand| %>
+            <li>Name: <span id="name"><%= brand.name %></span></li><br>
+            <li>Description: <span id="description"><%= raw handleMarkup(brand.description) %></span></li><br>
+            <span id="brand"><%=link_to 'Edit Brand', edit_player_brand_path(@player,brand.id)%></span>
+        <% end %>
+      </ul>
+            <span id="brand"><%=link_to 'Back to Player', player_path(@player)%></span>
+  <% end %>
+</div>

@@ -5,6 +5,8 @@
   Age : <span id="age"><%= @player.age %></span><br>
   description : <span id="description"> <%= raw handleMarkup(@player.description) %></span><br>
   <%= link_to 'Edit Player', edit_player_path(@player) %>
-  <%= link_to 'Create Brand', new_player_brand_path(@player)%>
   <%= link_to 'Delete Player', player_path(@player), method: :delete, data: {confirm: 'Are you sure!!'} %>
+  <%= link_to 'Create Brand', new_player_brand_path(@player) %>
+  <%= link_to 'Show Brand', player_brands_path(@player) %>
+  <%= link_to 'Show Players', players_path %>
 </div>

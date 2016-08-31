@@ -23,7 +23,7 @@
       <%= play.label :description%>
       <%= play.text_area :description%>
     </p>
-
-    <%= play.submit %>
-
+    <br>
+    <%= play.submit %><br><br>
+  <%= link_to 'Back to Player', players_path(play)%>
 <% end %>

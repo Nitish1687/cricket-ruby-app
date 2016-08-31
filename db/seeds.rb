@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Player.create({name: 'Nitish', age: 22, description: '*cricket* player'})
+#
+# Brand.create({name: 'Nike', description: '*Need to wear while playing sports*', player_id: 251})
+
+
+@player = Player.create(name: 'Nitish', age: 28, description: '*doing good*')
+@brand = Brand.create(name: 'Nike', description: '*good brand*', player_id: @player.id)

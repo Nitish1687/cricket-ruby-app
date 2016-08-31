@@ -3,6 +3,11 @@ class BrandsController < ApplicationController
   before_action :set_player
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @brands = @player.brands
+    [@player, @brands]
+  end
+
   def new
     @brand = @player.brands.build
   end
@@ -23,6 +28,20 @@ class BrandsController < ApplicationController
       redirect_to new
     end
 
+  end
+
+  def edit
+    @player = set_player
+    @brand = set_brand
+    [@player, @brand]
+  end
+
+  def update
+    @player = set_player
+    @brand = set_brand
+    @brand.update(brand_param)
+
+    redirect_to player_brands_path(@player)
   end
 
 

@@ -1,3 +1,7 @@
+<% require File.expand_path(File.dirname(__FILE__) + '/../../helpers/players_helper') %>
+
 <h1>Brand Details</h1><br>
-<span id ="name"><%=@brand.name%></span><br>
-<span id ="description"><%=@brand.description%></span>
+Name : <span id="name"><%= @brand.name %></span><br>
+Description : <span id="description"><%= raw handleMarkup(@brand.description) %></span> <br>
+
+<%= link_to 'Show Brands', player_brands_path(@player,@brands)%>

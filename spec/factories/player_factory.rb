@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :player do
-    name "example player"
+    name 'testPlayer'
+    brands { Array.new(1) { FactoryGirl.build(:brand) } }
   end
 end
