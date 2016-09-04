@@ -13,11 +13,18 @@ RSpec.feature "Brand" do
 
     fill_in 'Name', with: 'Nike'
     fill_in 'Description', with: 'good'
+    attach_file 'brand[attachment]', 'spec/fixtures/brand.txt'
 
     click_button 'submit'
 
     expect(page.find("span#name").text).to eq 'Nike'
     expect(page.find("span#description").text).to eq 'good'
+    # expect(page.find("div#attachment")).to have_content 'brand.txt'
+
+    within('div#attachment') do
+      expect(page).to have_content 'brand.txt'
+    end
+
   end
 
   scenario 'show all brands associate with individual player' do

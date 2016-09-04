@@ -12,4 +12,4 @@
 
 
 @player = Player.create(name: 'Nitish', age: 28, description: '*doing good*')
-@brand = Brand.create(name: 'Nike', description: '*good brand*', player_id: @player.id)
+@brand = Brand.create(name: 'Nike', description: '*good brand*',attachment: 'spec/fixtures/brand.txt' ,player_id: @player.id)

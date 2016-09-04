@@ -1,15 +1,21 @@
-<%=form_for([player, brand]) do |brand| %>
+<%= form_for([player, brand]) do |brand| %>
     <p>
       <%= brand.label :name %>
-      <%=brand.text_field :name%>
+      <%= brand.text_field :name %>
     </p>
     <p>
       <%= brand.label :description %>
       <%= brand.text_area :description %>
     </p>
+    <p>
+      <%= brand.file_field :attachment, as: :file, label: 'File' %>
+    </p>
+    <p>
+      <%= brand.file_field :attachment_cache, type: :hidden %>
+    </p>
 
-    <%= brand.button :submit  %>
+    <%= brand.button :submit %>
     <br>
     <br>
-    <%= link_to 'Back to Brand', player_brands_path(@player,@brands) %>
-<%end%>
+    <%= link_to 'Back to Brand', player_brands_path(@player, @brands) %>
+<% end %>

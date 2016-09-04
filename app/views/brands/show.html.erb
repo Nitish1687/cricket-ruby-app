@@ -4,4 +4,13 @@
 Name : <span id="name"><%= @brand.name %></span><br>
 Description : <span id="description"><%= raw handleMarkup(@brand.description) %></span> <br>
 
-<%= link_to 'Show Brands', player_brands_path(@player,@brands)%>
+<% if @brand.attachment.present? %>
+    <div id="attachment">
+      <p>
+        <%= link_to File.basename(@brand.attachment_url), @brand.attachment_url %>
+        (<%= number_to_human_size(@brand.attachment.size) %>)
+      </p>
+    </div>
+<% end %>
+
+<%= link_to 'Show Brands', player_brands_path(@player, @brands) %>
